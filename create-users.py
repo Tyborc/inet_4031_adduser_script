@@ -5,7 +5,7 @@
 # 3-23-25
 # 3-25-25
 
-#REPLACE THIS COMMENT - identify what each of these imports is for.
+#Answers will be commented next to code. 
 import os    #Imports OS module allowing for I/O functions including file reading and writing
 import re    #Imports regular expressions to ensure functionality without needing most up to date python
 import sys   #Imports sys module allowing for more efficient I/O and command line arguments
@@ -18,7 +18,7 @@ def main():
 
         #REPLACE THIS COMMENT - this "regular expression" is searching for the presence of a character - what is it and why?
         #The important part is WHY it is looking for a particular characer - what is that character being used for?
-        match = re.match("^#",line)
+        match = re.match("^#",line) #Checking for the presence of the '#' Character 
 
         #REPLACE THIS COMMENT - why is the code doing this?
         fields = line.strip().split(':')
