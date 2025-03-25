@@ -21,13 +21,10 @@ def main():
         match = re.match("^#",line) #Checking for the presence of the '#' Character 
 
         #REPLACE THIS COMMENT - why is the code doing this?
-        fields = line.strip().split(':')
-
-        #REPLACE THESE COMMENTS with a single comment describing the logic of the IF 
-        #what would an appropriate comment be for describing what this IF statement is checking for?
-        #what happens if the IF statement evaluates to true?
-        #how does this IF statement rely on what happened in the prior two lines of code? The match and fields lines.
-        #the code clearly shows that the variables match and the length of fields is being checked for being != 5  so why is it doing that?
+        fields = line.strip().split(':')         #Takes a single 
+        
+        # The following IF statement checks if there is a '#' beginning a line or if the length of fields which it the individual lines from the is not equal to 5.
+        # If either of the checks is true then the continue skips the remaining code in the loop.
         if match or len(fields) != 5:
             continue
 
