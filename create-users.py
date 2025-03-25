@@ -21,7 +21,7 @@ def main():
         match = re.match("^#",line) #Checking for the presence of the '#' Character 
 
         #REPLACE THIS COMMENT - why is the code doing this?
-        fields = line.strip().split(':')         #Takes a single 
+        fields = line.strip().split(':')         #Takes a single line and splits it by the ':' character.
         
         # The following IF statement checks if there is a '#' beginning a line or if the length of fields which it the individual lines from the is not equal to 5.
         # If either of the checks is true then the continue skips the remaining code in the loop.
@@ -29,6 +29,7 @@ def main():
             continue
 
         #REPLACE THIS COMMENT - what is the purpose of the next three lines. How does it relate to what is stored in the passwd file?
+        # Sets the new variables equal to specific indexes in the Fields array this is each section that us broken up in the line.strip().split(';') command 
         username = fields[0]
         password = fields[1]
         gecos = "%s %s,,," % (fields[3],fields[2])
