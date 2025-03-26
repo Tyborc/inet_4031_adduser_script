@@ -1,2 +1,3 @@
 # inet_4031_adduser_script
-INET 4031 Lab 8 P2
+INET 4031 Lab 8 Part 2
+## H2 Program Descrip
