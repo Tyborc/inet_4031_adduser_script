@@ -36,35 +36,37 @@ def main():
         #A user may need to be added to multiple groups. 
         groups = fields[4].split(',')
 
-        #REPLACE THIS COMMENT - what is the point of this print statement?
+       
         # The print statement is akin to a troubleshooting printout in code allowing the user to see what is being added as the account user name. 
         print("==> Creating account for %s..." % (username))
-        #REPLACE THIS COMMENT - what is this line doing?  What will the variable "cmd" contain.
+      
+	# Runs the add user command through the import OS commands without setting password
         cmd = "/usr/sbin/adduser --disabled-password --gecos '%s' %s" % (gecos,username)
 
         #REMOVE THIS COMMENT AFTER YOU UNDERSTAND WHAT TO DO - these statements are currently "commented out" as talked about in class
         #The first time you run the code...what should you do here?  If uncommented - what will the os.system(cmd) statemetn attempt to do?
-        #print cmd
-        #os.system(cmd)
+#	The first time it running the code would be good to print the contents of 'cmd'. If uncommented os.system(cmd) will attempt to run the command in cmd on the machine.
+#       print cmd
+        os.system(cmd)
 
         #Same as the line for the account creation is shows that the password is being set for a specific user so that the person running the code knows who it is set for and can track what has happened
         print("==> Setting the password for %s..." % (username))
-        #REPLACE THIS COMMENT - what is this line doing?  What will the variable "cmd" contain. You'll need to lookup what these linux commands do.
+        #Sets the password of the priorly created user 
         cmd = "/bin/echo -ne '%s\n%s' | /usr/bin/sudo /usr/bin/passwd %s" % (password,password,username)
 
-        #REMOVE THIS COMMENT AFTER YOU UNDERSTAND WHAT TO DO - these statements are currently "commented out" as talked about in class
-        #The first time you run the code...what should you do here?  If uncommented - what will the os.system(cmd) statemetn attempt to do?
-        #print cmd
-        #os.system(cmd)
+        
+        
+#	The first time that this code is run it would be beneficial to just print out what the cmd would be to ensure it is working. The os.system(cmd) statement will run 'cmd' as a command in the machine. 
+ #      print cmd
+        os.system(cmd)
 
         for group in groups:
-            #REPLACE THIS COMMENT with one that answers "What is this IF statement looking for and why? If group !='-' what happens?"
             #The IF statment is checking for sections of the group field that are not '-' which indicates no groups. If the group is not '-' then the code should add a user to that group.
             if group != '-':
                 print("==> Assigning %s to the %s group..." % (username,group))
                 cmd = "/usr/sbin/adduser %s %s" % (username,group)
-                #print cmd
-                #os.system(cmd)
+  #             print cmd
+                os.system(cmd)
 
 if __name__ == '__main__':
     main()
